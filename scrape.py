@@ -6,7 +6,7 @@ def scrape_dynamic_site(url):
         browser = p.chromium.launch(headless=False) # Or False to see the browser
         page = browser.new_page()
         try:
-            page.goto(url, timeout=30000) # Wait for network to be idle
+            page.goto(url, timeout=60000) # Wait for network to be idle
 
             # Give some time for JS to load, if necessary (adjust as needed)
             # time.sleep(5) # Or use page.wait_for_selector for specific elements
