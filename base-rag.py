@@ -2,7 +2,7 @@ import ollama
 
 # retrieval dataset / database
 dataset = []
-with open('retrieve_data/scraped_texts.txt', 'r', encoding='utf-8') as file:
+with open('retrieve_data/database.txt', 'r', encoding='utf-8') as file:
   dataset = file.readlines()
   print(f'loaded {len(dataset)} entries')
 
