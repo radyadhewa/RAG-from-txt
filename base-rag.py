@@ -1,28 +1,46 @@
 import ollama
-
-# retrieval dataset / database
-dataset = []
-with open('retrieve_data/database.txt', 'r', encoding='utf-8') as file:
-  dataset = file.readlines()
-  print(f'loaded {len(dataset)} entries')
+import pickle
+import os
 
 # ollama model
 EMBBEDING_MODEL = "hf.co/CompendiumLabs/bge-base-en-v1.5-gguf"
 LANGUAGE_MODEL = "hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF"
 
 # VECTOR DATABASE
-# Ollama embedding model will convert each chunk of data to an embedding vector and store the chunk & corresponding vector in list
-VECTOR_DB = []
+VECTOR_DB_PATH = 'rag_db.pkl'
 
-def add_chunk_to_database(chunk):
-  embedding = ollama.embed(model=EMBBEDING_MODEL, input=chunk)['embeddings'][0]
-  VECTOR_DB.append((chunk, embedding))
-  
-# each line of data as a chunck
-for i, chunk in enumerate(dataset):
-  add_chunk_to_database(chunk)
-  print(f'added chunk {i+1}/{len(dataset)} to the database')
-  
+# retrieval dataset / database
+if os.path.exists(VECTOR_DB_PATH):
+    with open(VECTOR_DB_PATH, 'rb') as f:
+        VECTOR_DB = pickle.load(f)
+    print(f'Loaded existing vector database with {len(VECTOR_DB)} chunks')
+else:
+    dataset = []
+
+    with open('retrieve_data/database.txt', 'r', encoding='utf-8') as file:
+        retrieval1 = file.readlines()
+        print(f'loaded {len(retrieval1)} entries from database.txt')
+        dataset.extend(retrieval1)
+
+    with open('retrieve_data/scraped_texts.txt', 'r', encoding='utf-8') as file:
+        retrieval2 = file.readlines()
+        print(f'loaded {len(retrieval2)} entries from scraped_texts.txt')
+        dataset.extend(retrieval2)
+
+    # Ollama embedding model will convert each chunk of data to an embedding vector and store the chunk & corresponding vector in list
+    VECTOR_DB = []
+    
+    # each line of data as a chunck
+    for i, chunk in enumerate(dataset):
+        embedding = ollama.embed(model=EMBBEDING_MODEL, input=chunk)['embeddings'][0]
+        VECTOR_DB.append((chunk, embedding))
+        print(f'added chunk {i+1}/{len(dataset)} to the database')
+
+    # Save to disk
+    with open(VECTOR_DB_PATH, 'wb') as f:
+        pickle.dump(VECTOR_DB, f)
+    print(f'Saved vector database with {len(VECTOR_DB)} chunks')
+
 
 # RETRIEVAL
 # returns top N most relevant chunks based on cosine similarity
