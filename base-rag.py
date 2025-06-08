@@ -68,30 +68,41 @@ def retrieve(query, top_n=3):
 # GENERATION 
 # chatbot will respone based on the retrieved knowledge, from the step before.
 # by adding chunks to the prompt that will be taken as an input for the bot
-input_query = input('Ask me a question: ')
-retrieved_knowledge = retrieve(input_query)
+chat_history = []
 
-print('Retrieved knowledge:')
-for chunk, similarity in retrieved_knowledge:
-  print(f' - (similarity: {similarity:.2f}) {chunk}')
+while True:
+    input_query = input('\nYou: ')
+    if input_query.lower() in ['exit', 'quit']:
+        print("Goodbye!")
+        break
 
-chunks = '\n'.join([f' - {chunk}' for chunk, similarity in retrieved_knowledge])
+    retrieved_knowledge = retrieve(input_query)
 
-instruction_prompt = f'''You are a helpful chatbot.
+    print('Retrieved knowledge:')
+    for chunk, similarity in retrieved_knowledge:
+        print(f' - (similarity: {similarity:.2f}) {chunk}')
+
+    chunks = '\n'.join([f' - {chunk.strip()}' for chunk, similarity in retrieved_knowledge])
+
+    instruction_prompt = f'''You are a helpful chatbot.
 Use only the following pieces of context to answer the question. Don't make up any new information:
 {chunks}
 '''
 
-# generating response from ollama
-stream = ollama.chat(
-  model=LANGUAGE_MODEL,
-  messages=[
-    {'role': 'system', 'content': instruction_prompt},
-    {'role': 'user', 'content': input_query},
-  ],
-  stream=True
-)
+    # build the messages list with chat history
+    messages = [{'role': 'system', 'content': instruction_prompt}] + chat_history
+    messages.append({'role': 'user', 'content': input_query})
 
-print('Chatbot response:')
-for chunk in stream:
-  print(chunk['message']['content'], end='', flush=True)
+    # generate response from ollama
+    stream = ollama.chat(model=LANGUAGE_MODEL, messages=messages, stream=True)
+
+    print('Bot:', end=' ')
+    bot_reply = ''
+    for chunk in stream:
+        content = chunk['message']['content']
+        print(content, end='', flush=True)
+        bot_reply += content
+
+    # update chat history
+    chat_history.append({'role': 'user', 'content': input_query})
+    chat_history.append({'role': 'assistant', 'content': bot_reply})
