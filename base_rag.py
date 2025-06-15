@@ -45,7 +45,7 @@ def load_vector_db():
         print(f'Saved vector database with {len(VECTOR_DB)} chunks')
         return VECTOR_DB
 
-load_vector_db()
+VECTOR_DB = load_vector_db()
 
 # RETRIEVAL
 # returns top N most relevant chunks based on cosine similarity
@@ -57,59 +57,15 @@ def cosine_similarity (a, b):
   return dot_product / (norm_a * norm_b)
 
 # the retrieve function
-def retrieve(query, vector_db,top_n=3):
+def retrieve(query, vector_db, top_n=3):
+  top_n = int(top_n)
   query_embbeding = ollama.embed(model=EMBBEDING_MODEL, input=query)['embeddings'][0]
-  
   # temp list to store [chunk, similarity] pairs
   similarities = []
   for chunk, embedding in vector_db:
     similarity = cosine_similarity(query_embbeding, embedding)
     similarities.append((chunk, similarity))
-    
   # sort similarity in descending order, higher similarity -- more relevant
   similarities.sort(key=lambda x: x[1], reverse=True)
   
   return similarities[:top_n]
-
-
-# GENERATION 
-# chatbot will respone based on the retrieved knowledge, from the step before.
-# by adding chunks to the prompt that will be taken as an input for the bot
-# chat_history = []
-
-# while True:
-#     input_query = input('\nYou: ')
-#     if input_query.lower() in ['exit', 'quit']:
-#         print("Goodbye!")
-#         break
-
-#     retrieved_knowledge = retrieve(input_query)
-
-#     print('Retrieved knowledge:')
-#     for chunk, similarity in retrieved_knowledge:
-#         print(f' - (similarity: {similarity:.2f}) {chunk}')
-
-#     chunks = '\n'.join([f' - {chunk.strip()}' for chunk, similarity in retrieved_knowledge])
-
-#     instruction_prompt = f'''You are a helpful chatbot.
-# Use only the following pieces of context to answer the question. Don't make up any new information:
-# {chunks}
-# '''
-
-#     # build the messages list with chat history
-#     messages = [{'role': 'system', 'content': instruction_prompt}] + chat_history
-#     messages.append({'role': 'user', 'content': input_query})
-
-#     # generate response from ollama
-#     stream = ollama.chat(model=LANGUAGE_MODEL, messages=messages, stream=True)
-
-#     print('Bot:', end=' ')
-#     bot_reply = ''
-#     for chunk in stream:
-#         content = chunk['message']['content']
-#         print(content, end='', flush=True)
-#         bot_reply += content
-
-#     # update chat history
-#     chat_history.append({'role': 'user', 'content': input_query})
-#     chat_history.append({'role': 'assistant', 'content': bot_reply})

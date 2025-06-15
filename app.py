@@ -6,7 +6,13 @@ from base_rag import load_vector_db, retrieve, LANGUAGE_MODEL
 VECTOR_DB = load_vector_db()
 
 st.set_page_config(page_title="SI Chatbot", layout="wide")
-st.title("💬 Chatbot RAG - Tanya jawab sama bot SI!")
+
+# Display logo and title
+col1, col2 = st.columns([1, 8])
+with col1:
+    st.image("assets\SISFO TELU.png", width=70)
+with col2:
+    st.title("💬 Chatbot RAG - Tanya jawab sama bot SI!")
 
 # Session state for history
 if "chat_history" not in st.session_state:

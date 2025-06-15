@@ -2,7 +2,6 @@ Sosialisasi dan Tanya Jawab
 MBKM (Internal & Eksternal) , WRAP & Magang Mandiri  
 Program Studi S1 Sistem Informasi 
 Versi 01 Februari 2025 Daftar Isi (1) 
-1.Persyaratan Umum dan Khusus Mengikuti MBKM 
 2.Persyaratan Umum dan Khusus Mengikuti Magang Mandiri 
 3.Hal-hal Penting yang perlu Diperhatikan 
 ○Konversi SKS MBKM Internal 
@@ -327,7 +326,6 @@ Sosialisasi dan Tanya Jawab
 MBKM (Internal & Eksternal) , WRAP & Magang Mandiri  
 Program Studi S1 Sistem Informasi 
 Versi 01 Februari 2025 Daftar Isi (1) 
-1.Persyaratan Umum dan Khusus Mengikuti MBKM 
 2.Persyaratan Umum dan Khusus Mengikuti Magang Mandiri 
 3.Hal-hal Penting yang perlu Diperhatikan 
 ○Konversi SKS MBKM Internal 
@@ -653,7 +651,6 @@ Sosialisasi dan Tanya Jawab
 MBKM (Internal & Eksternal) , WRAP & Magang Mandiri  
 Program Studi S1 Sistem Informasi 
 Versi 01 Februari 2025 Daftar Isi (1) 
-1.Persyaratan Umum dan Khusus Mengikuti MBKM 
 2.Persyaratan Umum dan Khusus Mengikuti Magang Mandiri 
 3.Hal-hal Penting yang perlu Diperhatikan 
 ○Konversi SKS MBKM Internal 
@@ -684,37 +681,8 @@ Kemanusiaan Daftar Isi (3)
 8.FAQ MBKM Internal  
 9.FAQ MBKM Eksternal 
 10. FAQ Magang Mandiri 
-Persyaratan Umum dan Khusus 
-untuk Mengikuti MBKM 
-Persyaratan Umum 
-1. Minimum Semester 5 saat mendaftar atau  SKS Lulus Minimal 90 SKS 
-2. Memiliki Indeks Prestasi Kumulatif (IPK) minimum 3,00 
-Persyaratan Khusus 
-1. Memiliki pengalaman kegiatan (Min. 4)  yang dibuktikan melalui Sertiﬁkat/Surat Tugas/Surat Keputusan :
-a. Pernah menjadi Asisten Lab. Riset, atau 
-b. Pernah menjadi Asisten Praktikum, atau 
-c.Pernah terlibat di Kepanitiaan, atau 
-d. Pernah mengikuti / Juara Lomba yang relevan dengan bidang Sistem Informasi (Min. tingkat kota, 
-Maks. 1 tahun terakhir), atau 
-e. Pernah berkontribusi dalam kegiatan/program yang diadakan oleh Prodi 
-2. Tidak memiliki Catatan Negatif  di Program Studi 
-3. Tidak sedang atau akan mengikuti  program MBKM / WRAP / Magang Mandiri / Program Lainnya yang sejenis 
-4. WAJIB Mengikuti Sosialisasi MBKM  yang diselenggarakan oleh Program Studi 
-5. Tidak disarankan  bagi Mahasiswa yang sedang Mengambil MK Capstone Design dan Project  atau MK Tugas 
-Akhir 
-6. Lulus Ujian Tata Tulis  Laporan MBKM (*) Persyaratan Umum dan Khusus 
-untuk Mengikuti Magang Mandiri 
-Persyaratan Umum 
-1. Minimum Semester 3 saat mendaftar atau  SKS Lulus Minimal 40 SKS 
-2. Memiliki Indeks Prestasi Kumulatif (IPK) minimum 3,00 
-3. Pelaksanaan Magang Mandiri tidak Mengganggu Perkuliahan 
-Persyaratan Khusus 
-1. WAJIB Mengikuti Sosialisasi MBKM  yang diselenggarakan oleh Program Studi 
-2. Sertiﬁkat Pelatihan / Penyelesaian Kursus  (Course Completion ) sesuai dengan bidang Sistem Informasi (Maks. 
-1 Terakhir) 
-3. Mendapat persetujuan dari Program Studi (Mengisi GForm) 
-4. Mengajukan Surat Pengantar via TOSS 
-5. Tidak memiliki Catatan Negatif  di Program Studi 
+Persyaratan Umum dan Khusus untuk Mengikuti MBKM Persyaratan Umum 1. Minimum Semester 5 saat mendaftar atau  SKS Lulus Minimal 90 SKS 2. Memiliki Indeks Prestasi Kumulatif (IPK) minimum 3,00 Persyaratan Khusus 1. Memiliki pengalaman kegiatan (Min. 4)  yang dibuktikan melalui Sertiﬁkat/Surat Tugas/Surat Keputusan :a. Pernah menjadi Asisten Lab. Riset, atau b. Pernah menjadi Asisten Praktikum, atau c.Pernah terlibat di Kepanitiaan, atau d. Pernah mengikuti / Juara Lomba yang relevan dengan bidang Sistem Informasi (Min. tingkat kota, Maks. 1 tahun terakhir), atau e. Pernah berkontribusi dalam kegiatan/program yang diadakan oleh Prodi 2. Tidak memiliki Catatan Negatif  di Program Studi 3. Tidak sedang atau akan mengikuti  program MBKM / WRAP / Magang Mandiri / Program Lainnya yang sejenis 4. WAJIB Mengikuti Sosialisasi MBKM  yang diselenggarakan oleh Program Studi 5. Tidak disarankan  bagi Mahasiswa yang sedang Mengambil MK Capstone Design dan Project  atau MK Tugas Akhir 6. Lulus Ujian Tata Tulis  Laporan MBKM (*) Persyaratan Umum dan Khusus 
+untuk Mengikuti Magang Mandiri Persyaratan Umum 1. Minimum Semester 3 saat mendaftar atau  SKS Lulus Minimal 40 SKS 2. Memiliki Indeks Prestasi Kumulatif (IPK) minimum 3,00 3. Pelaksanaan Magang Mandiri tidak Mengganggu Perkuliahan Persyaratan Khusus 1. WAJIB Mengikuti Sosialisasi MBKM  yang diselenggarakan oleh Program Studi 2. Sertiﬁkat Pelatihan /Penyelesaian Kursus  (Course Completion ) sesuai dengan bidang Sistem Informasi (Maks. 1 Terakhir) 3. Mendapat persetujuan dari Program Studi (Mengisi GForm) 4. Mengajukan Surat Pengantar via TOSS 5. Tidak memiliki Catatan Negatif  di Program Studi 
 Persyaratan Umum dan Khusus 
 Mengapa harus ada persyaratan Umum dan Khusus? 
 Menjaga Nama Baik Program Studi dan 
@@ -973,3 +941,4 @@ g.Melakukan pendaftaran di SIJAKI
 h. Mengisi LogBook di SIJAKI 
 i.Melakukan presentasi ke Pembimbing Akademik 
 j.Melakukan upload dokumen ke Openlib TERIMA KASIH 
+Kaprodi S1 Sistem Informasi Telkom adalah Taufik Nur Adi, S.Kom., M.T., Ph.D.
